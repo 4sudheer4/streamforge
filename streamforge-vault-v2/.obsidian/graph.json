@@ -1,0 +1,22 @@
+{
+  "collapse-filter": false,
+  "search": "",
+  "showTags": true,
+  "showAttachments": false,
+  "hideUnresolved": false,
+  "showOrphans": true,
+  "colorGroups": [
+    {"query":"tag:#phase","color":{"a":1,"rgb":3899154}},
+    {"query":"tag:#gotcha","color":{"a":1,"rgb":16737843}},
+    {"query":"tag:#distributed","color":{"a":1,"rgb":9699539}},
+    {"query":"tag:#database","color":{"a":1,"rgb":16755200}},
+    {"query":"tag:#java","color":{"a":1,"rgb":5025616}},
+    {"query":"tag:#devops","color":{"a":1,"rgb":11534336}},
+    {"query":"tag:#redis","color":{"a":1,"rgb":14680064}},
+    {"query":"tag:#kafka","color":{"a":1,"rgb":8912896}}
+  ],
+  "showArrow": true,
+  "nodeSizeMultiplier": 1.2,
+  "linkDistance": 250,
+  "repelStrength": 10
+}
