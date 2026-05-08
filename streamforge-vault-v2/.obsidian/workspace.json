@@ -69,16 +69,58 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "RoadMap of Phases/Full RoadMap Phase 2.md",
+                "file": "phases/Ph02 - Fingerprint + Dedup/DeduplicationEngine.java.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Full RoadMap Phase 2"
+              "title": "DeduplicationEngine.java"
+            }
+          },
+          {
+            "id": "bcada1bdce1befd7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "phases/Ph02 - Fingerprint + Dedup/EventIngestionService Explanation.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "EventIngestionService Explanation"
+            }
+          },
+          {
+            "id": "332f3505ae494549",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "phases/Ph02 - Fingerprint + Dedup/StreamEventEntity.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "StreamEventEntity"
+            }
+          },
+          {
+            "id": "047e92e67287dee4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "phases/Ph02 - Fingerprint + Dedup/EventIngestionService Explanation.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "EventIngestionService Explanation"
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 7
       }
     ],
     "direction": "vertical"
@@ -151,7 +193,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "RoadMap of Phases/Full RoadMap Phase 2.md",
+                "file": "phases/Ph02 - Fingerprint + Dedup/EventIngestionService Explanation.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -161,7 +203,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Full RoadMap Phase 2"
+              "title": "Backlinks for EventIngestionService Explanation"
             }
           },
           {
@@ -170,12 +212,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "RoadMap of Phases/Full RoadMap Phase 2.md",
+                "file": "phases/Ph02 - Fingerprint + Dedup/EventIngestionService Explanation.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Full RoadMap Phase 2"
+              "title": "Outgoing links from EventIngestionService Explanation"
             }
           },
           {
@@ -224,22 +266,26 @@
       "bases:Create new base": false
     }
   },
-  "active": "1d35bec7095a0d5c",
+  "active": "2afe202c0ae07677",
   "lastOpenFiles": [
-    "phases/Ph02 - Fingerprint + Dedup/ConcurrentHashMap TTL Eviction.md",
+    "phases/Ph02 - Fingerprint + Dedup/How is StreamEventRepository linked to postgres?.md",
+    "phases/Ph02 - Fingerprint + Dedup/StreamEventEntity.md",
     "RoadMap of Phases/Full RoadMap Phase 2.md",
+    "phases/Ph02 - Fingerprint + Dedup/EventIngestionService Explanation.md",
+    "phases/Ph02 - Fingerprint + Dedup/DeduplicationEngine.java.md",
+    "phases/Ph02 - Fingerprint + Dedup/Dedup vs Idempotency.md",
+    "phases/Ph02 - Fingerprint + Dedup/DedupEntry Record & FingerPrint Record.md",
+    "phases/Ph02 - Fingerprint + Dedup/ConcurrentHashMap TTL Eviction.md",
+    "phases/Ph02 - Fingerprint + Dedup/Ph03 - Fingerprint + Dedup.md",
+    "phases/Ph02 - Fingerprint + Dedup/Concepts/SHA-256 Fingerprint Logic.md",
+    "phases/Ph02 - Fingerprint + Dedup/Concepts/Task 3 Springboot constructors.md",
+    "phases/Ph02 - Fingerprint + Dedup/Concepts/ConcurrentHashMap -removeIf.md",
+    "phases/Ph02 - Fingerprint + Dedup/Concepts",
     "Home.md",
     "RoadMap of Phases",
     "Gotchas Master List.md",
-    "phases/Ph02 - Fingerprint + Dedup/DeduplicationEngine.java.md",
-    "phases/Ph02 - Fingerprint + Dedup/ConcurrentHashMap -removeIf.md",
-    "phases/Ph02 - Fingerprint + Dedup/Task 3 Springboot constructors.md",
     "phases/Ph01 - Spring Boot Skeleton/StreamEvent Record.md",
-    "phases/Ph02 - Fingerprint + Dedup/SHA-256 Fingerprint Logic.md",
-    "phases/Ph02 - Fingerprint + Dedup/DedupEntry Record & FingerPrint Record.md",
-    "phases/Ph02 - Fingerprint + Dedup/Dedup vs Idempotency.md",
     "phases/Ph01 - Spring Boot Skeleton/Ph01 - Spring Boot Skeleton.md",
-    "phases/Ph02 - Fingerprint + Dedup/Ph03 - Fingerprint + Dedup.md",
     "phases/Ph01 - Spring Boot Skeleton/Prometheus.yml.md",
     "phases/Ph01 - Spring Boot Skeleton/Prometheus and Grafana.md",
     "phases/Ph01 - Spring Boot Skeleton/Flyway V1 Schema.md",
@@ -250,10 +296,7 @@
     "phases/Ph01 - Spring Boot Skeleton/Maven Dependencies.md",
     "phases/Ph01 - Spring Boot Skeleton/Day2 summary/Day 2 complete.md",
     "phases/Ph01 - Spring Boot Skeleton/HealthController and flywhy+sql.md",
-    "phases/Ph01 - Spring Boot Skeleton/Day2 summary/[[Ph02 - Docker + Health.md",
     "phases/Ph02 - Docker + Health/Day3 summary",
-    "phases/Ph13 - Intervals + LRU + Trie/Untitled.md",
-    "phases/Ph13 - Intervals + LRU + Trie/LFU Three Maps Design.md",
     "phases/Ph01 - Spring Boot Skeleton/Day2 summary",
     "Untitled",
     "REFERENCES"

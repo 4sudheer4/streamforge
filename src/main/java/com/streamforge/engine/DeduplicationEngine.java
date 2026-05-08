@@ -5,6 +5,7 @@ import com.streamforge.domain.EventResult;
 import com.streamforge.domain.StreamEvent;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import java.time.Duration;
@@ -36,6 +37,7 @@ public class DeduplicationEngine {
      * 2. Check cache — hit? return cached result as DUPLICATE
      * 3. Miss? run processor → store result → return as PROCESSED
      */
+    //takes streamevent and return eventresult with fingerprint. check datastructures for more clarity.
     public EventResult deduplicateOrProcess(
             StreamEvent event,
             Function<StreamEvent, EventResult> processor  // injected processing logic
@@ -81,7 +83,7 @@ public class DeduplicationEngine {
         return cache.size();
     }
 
-    // Called by @Scheduled eviction job — also Task 4
+    @Scheduled(fixedDelay = 60_000) // runs every 60 seconds after last run completes
     public void evictExpired() {
         int before = cache.size();
         cache.entrySet().removeIf(e -> e.getValue().isExpired());
