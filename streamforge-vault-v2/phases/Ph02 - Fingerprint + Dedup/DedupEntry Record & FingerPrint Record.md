@@ -66,9 +66,19 @@ public record DeduplicationEntry(
 
 **How these two connect.** When Event 1 (the real payment) gets processed, you create an `EventResult` with status `"PROCESSED"`. You then wrap it in a `DeduplicationEntry` with `expiresAt = now + 30 minutes` and store it in the cache.
 
+When Event 2 (the retry) comes in, you pull the `DeduplicationEntry` out of the cache, call `isExpired()` — false, still valid — then return the inner `EventResult` but with status flipped to `"DUPLICATE"`.
 
 ## ⚠️ Gotcha / Watch Out
-When Event 2 (the retry) comes in, you pull the `DeduplicationEntry` out of the cache, call `isExpired()` — false, still valid — then return the inner `EventResult` but with status flipped to `"DUPLICATE"`.
+
+Q: but event 2 that enters after 5 mins of event 1, with same payload will anyways have new fingerprint. what is the point of 30 min cache time?
+
+The actual valid reason for 30-min TTL is simpler — **same bucket, network slowness**. Imagine Event 1 arrives at 10:03:00 and gets cached. A retry arrives at 10:04:58 — still same bucket, same fingerprint — but what if your cache evicted it after 5 minutes at 10:08:00? You'd never hit that scenario anyway since the bucket closed at 10:05.
+
+Honestly the 30-min TTL is somewhat redundant given the 5-min bucket. The real production reason is **cost of reprocessing vs cost of memory**. Keeping entries alive longer costs a little RAM but protects against edge cases you haven't thought of yet. It's a conservative default.
+
+You caught a genuine design tension here. Good instinct — this is exactly the kind of thing an interviewer probes.
+
+The 30 min just gives you a wide safety net. You could have a cache hit anywhere within that window as long as the retry also falls in the same 5-min bucket.
 
 ## 🔗 Related
 - 
