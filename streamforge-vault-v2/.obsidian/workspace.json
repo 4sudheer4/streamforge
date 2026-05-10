@@ -69,7 +69,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "phases/Ph02 - Fingerprint + Dedup/DeduplicationEngine.java.md",
+                "file": "phases/Ph02 - Fingerprint + Dedup/DeduplicationEngine/DeduplicationEngine.java.md",
                 "mode": "source",
                 "source": false
               },
@@ -83,7 +83,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "phases/Ph02 - Fingerprint + Dedup/EventIngestionService Explanation.md",
+                "file": "phases/Ph02 - Fingerprint + Dedup/EventIngestionService/EventIngestionService Explanation.md",
                 "mode": "source",
                 "source": false
               },
@@ -97,12 +97,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "phases/Ph02 - Fingerprint + Dedup/StreamEventEntity.md",
+                "file": "phases/Ph02 - Fingerprint + Dedup/Concepts/JPA/StreamEventEntity's JPA Explanation.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "StreamEventEntity"
+              "title": "StreamEventEntity's JPA Explanation"
             }
           },
           {
@@ -111,16 +111,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "phases/Ph02 - Fingerprint + Dedup/EventIngestionService Explanation.md",
+                "file": "phases/Ph02 - Fingerprint + Dedup/Concepts/JPA/StreamEventEntity's JPA Explanation.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "EventIngestionService Explanation"
+              "title": "StreamEventEntity's JPA Explanation"
+            }
+          },
+          {
+            "id": "3bae0fb70a9df86a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "phases/Ph02 - Fingerprint + Dedup/Concepts/Singleton, Objects and DI/Where in the code are we creating new object per request?.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Where in the code are we creating new object per request?"
             }
           }
         ],
-        "currentTab": 7
+        "currentTab": 8
       }
     ],
     "direction": "vertical"
@@ -193,7 +207,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "phases/Ph02 - Fingerprint + Dedup/EventIngestionService Explanation.md",
+                "file": "phases/Ph02 - Fingerprint + Dedup/Concepts/Singleton, Objects and DI/Where in the code are we creating new object per request?.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -203,7 +217,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for EventIngestionService Explanation"
+              "title": "Backlinks for Where in the code are we creating new object per request?"
             }
           },
           {
@@ -212,12 +226,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "phases/Ph02 - Fingerprint + Dedup/EventIngestionService Explanation.md",
+                "file": "phases/Ph02 - Fingerprint + Dedup/Concepts/Singleton, Objects and DI/Where in the code are we creating new object per request?.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from EventIngestionService Explanation"
+              "title": "Outgoing links from Where in the code are we creating new object per request?"
             }
           },
           {
@@ -268,18 +282,31 @@
   },
   "active": "2afe202c0ae07677",
   "lastOpenFiles": [
-    "phases/Ph02 - Fingerprint + Dedup/How is StreamEventRepository linked to postgres?.md",
-    "phases/Ph02 - Fingerprint + Dedup/StreamEventEntity.md",
+    "phases/Ph02 - Fingerprint + Dedup/Concepts/Singleton, Objects and DI/Constructors Springboot Task 3.md",
+    "phases/Ph02 - Fingerprint + Dedup/Concepts/Singleton, Objects and DI/Where in the code are we creating new object per request?.md",
+    "phases/Ph02 - Fingerprint + Dedup/Concepts/Singleton, Objects and DI/Stateless vs Stateful in StreamForge.md",
+    "phases/Ph02 - Fingerprint + Dedup/Concepts/Singleton, Objects and DI/Component reference table.md",
+    "phases/Ph02 - Fingerprint + Dedup/Concepts/Singleton, Objects and DI",
+    "phases/Ph02 - Fingerprint + Dedup/Concepts/ConcurrentHashMap -removeIf.md",
+    "DataStructures and Variables/till Phase 2/DataStructures and Variables till Phase02.md",
+    "phases/Ph02 - Fingerprint + Dedup/EventController/EventController.md",
+    "DataStructures and Variables/till Phase 2",
+    "phases/Ph02 - Fingerprint + Dedup/EventController/EventController.java.md",
+    "phases/Ph02 - Fingerprint + Dedup/EventIngestionService/EventIngestionService Explanation.md",
+    "phases/Ph02 - Fingerprint + Dedup/EventController",
+    "phases/Ph02 - Fingerprint + Dedup/DeduplicationEngine/DeduplicationEngine.java.md",
     "RoadMap of Phases/Full RoadMap Phase 2.md",
-    "phases/Ph02 - Fingerprint + Dedup/EventIngestionService Explanation.md",
-    "phases/Ph02 - Fingerprint + Dedup/DeduplicationEngine.java.md",
-    "phases/Ph02 - Fingerprint + Dedup/Dedup vs Idempotency.md",
-    "phases/Ph02 - Fingerprint + Dedup/DedupEntry Record & FingerPrint Record.md",
+    "phases/Ph02 - Fingerprint + Dedup/DeduplicationEngine",
+    "phases/Ph02 - Fingerprint + Dedup/EventIngestionService",
+    "phases/Ph02 - Fingerprint + Dedup/Concepts/JPA/JPA + PostGres highlevel overview.md",
+    "phases/Ph02 - Fingerprint + Dedup/Concepts/JPA/How is StreamEventRepository linked to postgres?.md",
+    "phases/Ph02 - Fingerprint + Dedup/Concepts/JPA",
+    "phases/Ph02 - Fingerprint + Dedup/Concepts/JPA/StreamEventEntity's JPA Explanation.md",
+    "phases/Ph02 - Fingerprint + Dedup/DeduplicationEngine/Dedup vs Idempotency.md",
+    "phases/Ph02 - Fingerprint + Dedup/DeduplicationEngine/DedupEntry Record & FingerPrint Record.md",
     "phases/Ph02 - Fingerprint + Dedup/ConcurrentHashMap TTL Eviction.md",
     "phases/Ph02 - Fingerprint + Dedup/Ph03 - Fingerprint + Dedup.md",
     "phases/Ph02 - Fingerprint + Dedup/Concepts/SHA-256 Fingerprint Logic.md",
-    "phases/Ph02 - Fingerprint + Dedup/Concepts/Task 3 Springboot constructors.md",
-    "phases/Ph02 - Fingerprint + Dedup/Concepts/ConcurrentHashMap -removeIf.md",
     "phases/Ph02 - Fingerprint + Dedup/Concepts",
     "Home.md",
     "RoadMap of Phases",
@@ -289,16 +316,7 @@
     "phases/Ph01 - Spring Boot Skeleton/Prometheus.yml.md",
     "phases/Ph01 - Spring Boot Skeleton/Prometheus and Grafana.md",
     "phases/Ph01 - Spring Boot Skeleton/Flyway V1 Schema.md",
-    "phases/Ph01 - Spring Boot Skeleton/Docker Compose Networking.md",
-    "phases/Ph01 - Spring Boot Skeleton/Container Healthchecks.md",
-    "phases/Ph01 - Spring Boot Skeleton/Ph02 - Docker + Health.md",
-    "phases/Ph01 - Spring Boot Skeleton/Package Structure.md",
-    "phases/Ph01 - Spring Boot Skeleton/Maven Dependencies.md",
-    "phases/Ph01 - Spring Boot Skeleton/Day2 summary/Day 2 complete.md",
-    "phases/Ph01 - Spring Boot Skeleton/HealthController and flywhy+sql.md",
     "phases/Ph02 - Docker + Health/Day3 summary",
-    "phases/Ph01 - Spring Boot Skeleton/Day2 summary",
-    "Untitled",
-    "REFERENCES"
+    "phases/Ph01 - Spring Boot Skeleton/Day2 summary"
   ]
 }

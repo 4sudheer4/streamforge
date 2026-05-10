@@ -21,5 +21,26 @@ public class StreamEventEntity {
     private Instant timestamp;
     private String fingerprint;
 
-    // constructor, getters
+    // JPA requires a no-arg constructor
+    public StreamEventEntity() {}
+
+    // The constructor EventIngestionService is calling
+    public StreamEventEntity(UUID id, String sourceId, String type,
+                              Map<String, Object> payload, Instant timestamp,
+                              String fingerprint) {
+        this.id = id;
+        this.sourceId = sourceId;
+        this.type = type;
+        this.payload = payload;
+        this.timestamp = timestamp;
+        this.fingerprint = fingerprint;
+    }
+
+    // Getters
+    public UUID getId() { return id; }
+    public String getSourceId() { return sourceId; }
+    public String getType() { return type; }
+    public Map<String, Object> getPayload() { return payload; }
+    public Instant getTimestamp() { return timestamp; }
+    public String getFingerprint() { return fingerprint; }
 }
