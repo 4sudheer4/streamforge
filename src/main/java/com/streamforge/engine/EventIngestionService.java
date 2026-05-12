@@ -14,8 +14,10 @@ import java.util.UUID;
 public class EventIngestionService {
     private final DeduplicationEngine deduplicationEngine;
     private final StreamEventRepository repository;  // JPA repository — talks to PostgreSQL
+    private final TopKEventTracker topKEventTracker;
 
     public EventResult ingest(StreamEvent event) {
+        topKEventTracker.record(event.type());
         return deduplicationEngine.deduplicateOrProcess(
             event,
             this::persistToDatabase  // METHOD REFERENCE — same as e -> persistToDatabase(e)

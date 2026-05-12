@@ -13,7 +13,7 @@
 | 2 | [[Ph02 - Docker + Health\|Ph02 — Docker Compose + Health]] | 🔲 |
 | 3 | [[Ph03 - Fingerprint + Dedup\|Ph03 — Fingerprint + Dedup Engine]] | 🔲 |
 | 4 | [[Ph04 - Event Ingestion + Metrics\|Ph04 — Event Ingestion + Micrometer]] | 🔲 |
-| 5 | [[Ph05 - Top-K Tracker\|Ph05 — Top-K Event Tracker]] | 🔲 |
+| 5 | [[Ph03 - Top-K Tracker\|Ph05 — Top-K Event Tracker]] | 🔲 |
 | 6 | [[Ph06 - Redis Rate Limiter\|Ph06 — Redis Sliding Window Rate Limiter]] | 🔲 |
 | 7 | [[Ph07 - Kafka Producer + Spike Detector\|Ph07 — Kafka + Spike Detector]] | 🔲 |
 | 8 | [[Ph08 - Stack + Expression Engine\|Ph08 — Stack + RPN Expression Engine]] | 🔲 |

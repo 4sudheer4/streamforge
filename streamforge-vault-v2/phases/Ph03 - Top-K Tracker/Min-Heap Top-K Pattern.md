@@ -15,4 +15,4 @@ Why a min-heap of size K gives you top-K in O(n log k) — smaller is evicted, l
 
 
 ## 🔗 Related
-- [[Ph05 - Top-K Tracker]]
+- [[Ph03 - Top-K Tracker]]

@@ -11,11 +11,11 @@
 |--------|-------|
 | `@EnableScheduling` required or `@Scheduled` silently does nothing | [[Ph04 - Event Ingestion + Metrics]] |
 | `/actuator/prometheus` not exposed by default — add to `application.yml` | [[Ph04 - Event Ingestion + Metrics]] |
-| `PriorityQueue` is not thread-safe — rebuild on read or synchronize | [[Ph05 - Top-K Tracker]] |
+| `PriorityQueue` is not thread-safe — rebuild on read or synchronize | [[Ph03 - Top-K Tracker]] |
 | JPA lazy loading outside `@Transactional` = `LazyInitializationException` | [[Ph08 - Stack + Expression Engine]] |
 | `@Transactional` on private methods does nothing — Spring AOP can't proxy them | [[Ph08 - Stack + Expression Engine]] |
 | `synchronized` pins Java 21 virtual threads to carrier — use `ReentrantLock` | [[Ph11 - Priority Scheduler + Heaps]] |
-| `ConcurrentHashMap.get()` + `put()` is NOT atomic — use `compute()` | [[Ph05 - Top-K Tracker]] |
+| `ConcurrentHashMap.get()` + `put()` is NOT atomic — use `compute()` | [[Ph03 - Top-K Tracker]] |
 
 ---
 

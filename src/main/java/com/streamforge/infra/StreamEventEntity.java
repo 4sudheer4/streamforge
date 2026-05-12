@@ -5,6 +5,8 @@ import java.time.Instant;
 import java.util.Map;
 import java.util.UUID;
 
+import com.streamforge.common.MapToJsonConverter;
+
 @Entity
 @Table(name = "stream_events")
 public class StreamEventEntity {

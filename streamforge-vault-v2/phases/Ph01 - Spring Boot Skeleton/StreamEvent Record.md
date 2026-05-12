@@ -25,7 +25,7 @@ public record StreamEvent(
 |-------|------|-----|
 | `id` | `UUID` | Unique identifier for this event instance |
 | `sourceId` | `String` | Which client/service sent it → rate limit key in [[Ph06 - Redis Rate Limiter]] |
-| `type` | `String` | Event kind e.g. "payment" → top-K tracking in [[Ph05 - Top-K Tracker]] |
+| `type` | `String` | Event kind e.g. "payment" → top-K tracking in [[Ph03 - Top-K Tracker]] |
 | `payload` | `Map<String,Object>` | Actual event data — flexible shape fits any upstream |
 | `timestamp` | `Instant` | When it happened → 5-min fingerprint window in [[Ph03 - Fingerprint + Dedup]] |
 | `fingerprint` | `String` | SHA-256 hash → duplicate detection in [[Ph03 - Fingerprint + Dedup]] |
