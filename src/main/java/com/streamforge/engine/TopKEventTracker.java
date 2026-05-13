@@ -21,6 +21,10 @@ public class TopKEventTracker {
     public void record(String type) {
         counts.computeIfAbsent(type, k -> new AtomicLong(0)).incrementAndGet();
     }
+    //method for tests
+    public void reset() {
+        counts.clear();
+    }
 
     // Task 3 — O(n log k) top-K retrieval
     public List<TopKEntry> getTopK(int k) {
