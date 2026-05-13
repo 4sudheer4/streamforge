@@ -5,7 +5,12 @@ import java.time.Instant;
 import java.util.Map;
 import java.util.UUID;
 
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
+
 import com.streamforge.common.MapToJsonConverter;
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
 
 @Entity
 @Table(name = "stream_events")
@@ -17,7 +22,8 @@ public class StreamEventEntity {
     private String type;
 
     @Column(columnDefinition = "jsonb")
-    @Convert(converter = MapToJsonConverter.class)
+    //@Convert(converter = MapToJsonConverter.class)
+    @JdbcTypeCode(SqlTypes.JSON)
     private Map<String, Object> payload;
 
     private Instant timestamp;
