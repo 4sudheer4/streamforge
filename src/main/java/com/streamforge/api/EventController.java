@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import java.util.UUID;
 
 @Slf4j
 @RestController
@@ -26,4 +27,12 @@ public class EventController {
         int statusCode = result.deduplicated() ? 208 : 200;
         return ResponseEntity.status(statusCode).body(result);
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<?> getEventById(@PathVariable UUID id) {
+        return ingestionService.getById(id)
+            .map(entity -> ResponseEntity.ok(entity))
+            .orElse(ResponseEntity.notFound().build());
+    }
+
 }

@@ -6,6 +6,7 @@ import com.streamforge.infra.StreamEventEntity;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import java.util.Optional;
 
 import java.util.UUID;
 @Slf4j
@@ -22,6 +23,10 @@ public class EventIngestionService {
             event,
             this::persistToDatabase  // METHOD REFERENCE — same as e -> persistToDatabase(e)
         );
+    }
+
+    public Optional<StreamEventEntity> getById(UUID id) {
+        return repository.findById(id);
     }
 
     // THIS is the processor lambda the engine calls on cache miss

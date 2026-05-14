@@ -125,12 +125,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "phases/Ph03 - Top-K Tracker/Min-Heap Top-K Pattern.md",
+                "file": "phases/Ph03 - Top-K Tracker/Summary of Phase 3.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Min-Heap Top-K Pattern"
+              "title": "Summary of Phase 3"
             }
           }
         ],
@@ -207,7 +207,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "phases/Ph03 - Top-K Tracker/Min-Heap Top-K Pattern.md",
+                "file": "phases/Ph03 - Top-K Tracker/Summary of Phase 3.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -217,7 +217,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Min-Heap Top-K Pattern"
+              "title": "Backlinks for Summary of Phase 3"
             }
           },
           {
@@ -226,12 +226,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "phases/Ph03 - Top-K Tracker/Min-Heap Top-K Pattern.md",
+                "file": "phases/Ph03 - Top-K Tracker/Summary of Phase 3.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Min-Heap Top-K Pattern"
+              "title": "Outgoing links from Summary of Phase 3"
             }
           },
           {
@@ -282,8 +282,10 @@
   },
   "active": "3bae0fb70a9df86a",
   "lastOpenFiles": [
-    "phases/Ph03 - Top-K Tracker/Ph03 - Top-K Tracker.md",
+    "RoadMap of Phases/Full RoadMap Phase 2.md",
+    "phases/Ph03 - Top-K Tracker/Summary of Phase 3.md",
     "phases/Ph03 - Top-K Tracker/Min-Heap Top-K Pattern.md",
+    "phases/Ph03 - Top-K Tracker/Ph03 - Top-K Tracker.md",
     "phases/Ph03 - Top-K Tracker/AtomicLong vs Synchronized.md",
     "BluePrint -Springboot project/The BluePrint.md",
     "BluePrint -Springboot project",
@@ -304,7 +306,6 @@
     "phases/Ph02 - Fingerprint + Dedup/EventIngestionService/EventIngestionService Explanation.md",
     "phases/Ph02 - Fingerprint + Dedup/EventController",
     "phases/Ph02 - Fingerprint + Dedup/DeduplicationEngine/DeduplicationEngine.java.md",
-    "RoadMap of Phases/Full RoadMap Phase 2.md",
     "phases/Ph02 - Fingerprint + Dedup/DeduplicationEngine",
     "phases/Ph02 - Fingerprint + Dedup/EventIngestionService",
     "phases/Ph02 - Fingerprint + Dedup/Concepts/JPA/JPA + PostGres highlevel overview.md",
@@ -314,7 +315,6 @@
     "phases/Ph02 - Fingerprint + Dedup/DeduplicationEngine/Dedup vs Idempotency.md",
     "phases/Ph02 - Fingerprint + Dedup/DeduplicationEngine/DedupEntry Record & FingerPrint Record.md",
     "phases/Ph02 - Fingerprint + Dedup/ConcurrentHashMap TTL Eviction.md",
-    "phases/Ph02 - Fingerprint + Dedup/Ph03 - Fingerprint + Dedup.md",
     "phases/Ph02 - Fingerprint + Dedup/Concepts",
     "RoadMap of Phases",
     "phases/Ph02 - Docker + Health/Day3 summary"
