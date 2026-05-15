@@ -7,7 +7,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
-import com.streamforge.infra.SlidingWindowRateLimiter.RateLimitResult;
+import com.streamforge.infra.RateLimitResult;
 
 import java.io.IOException;
 
@@ -57,7 +57,7 @@ public class RateLimitFilter extends OncePerRequestFilter {
 
         // Step 3 — allowed, add headers and pass through
         response.setHeader("X-RateLimit-Limit", "100");
-        response.setHeader("X-RateLimit-Remaining", "unknown");
+        response.setHeader("X-RateLimit-Remaining", String.valueOf(result.remaining()));
         response.setHeader("X-RateLimit-Reset", 
             String.valueOf(System.currentTimeMillis() + 60_000));
 

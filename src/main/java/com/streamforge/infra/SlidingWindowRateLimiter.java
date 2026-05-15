@@ -15,6 +15,7 @@ public class SlidingWindowRateLimiter {
 
     private final RedisTemplate<String, String> redisTemplate;
     private DefaultRedisScript<Long> rateLimitScript;
+    
 
     // Why inject RedisTemplate and not StringRedisTemplate?
     // RedisTemplate<String,String> is what we configured in RedisConfig
@@ -37,20 +38,25 @@ public class SlidingWindowRateLimiter {
         rateLimitScript.setResultType(Long.class);
     }
 
-    public boolean tryAcquire(String sourceId) {
+    public RateLimitResult tryAcquire(String sourceId) {
         String key = "rl:" + sourceId;
         long now = System.currentTimeMillis();
         long windowMs = 60_000L;
         long limit = 100L;
 
-        Long result = redisTemplate.execute(
+        
+        Long count = redisTemplate.execute(
             rateLimitScript,
-            List.of(key),        // KEYS[1]
-            String.valueOf(now),         // ARGV[1]
-            String.valueOf(windowMs),    // ARGV[2]
-            String.valueOf(limit)        // ARGV[3]
+            List.of(key),
+            String.valueOf(now),
+            String.valueOf(windowMs),
+            String.valueOf(limit)
         );
-
-        return Long.valueOf(1L).equals(result);
+    
+        count = count == null ? 0L : count;
+        boolean allowed = count <= limit;
+        long remaining = Math.max(0, limit - count);
+    
+        return new RateLimitResult(allowed, remaining);
     }
 }

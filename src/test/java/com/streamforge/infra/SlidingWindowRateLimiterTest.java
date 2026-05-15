@@ -39,13 +39,14 @@ class SlidingWindowRateLimiterTest {
             .thenReturn(1L);
 
         for (int i = 0; i < 100; i++) {
-            assertThat(rateLimiter.tryAcquire("source-abc")).isTrue();
+            assertThat(rateLimiter.tryAcquire("source-abc").allowed()).isTrue();
         }
 
         // 101st → Redis says denied
         when(redisTemplate.execute(any(RedisScript.class), anyList(), any(), any(), any()))
             .thenReturn(0L);
 
-        assertThat(rateLimiter.tryAcquire("source-abc")).isFalse();
+            assertThat(rateLimiter.tryAcquire("source-abc").allowed()).isFalse();
+
     }
 }
