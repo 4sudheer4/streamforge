@@ -125,12 +125,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "phases/Ph03 - Top-K Tracker/Summary of Phase 3.md",
+                "file": "phases/Ph04 - Event Ingestion + Metrics/W2D2.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Summary of Phase 3"
+              "title": "W2D2"
             }
           }
         ],
@@ -207,7 +207,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "phases/Ph03 - Top-K Tracker/Summary of Phase 3.md",
+                "file": "phases/Ph04 - Event Ingestion + Metrics/W2D2.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -217,7 +217,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Summary of Phase 3"
+              "title": "Backlinks for W2D2"
             }
           },
           {
@@ -226,12 +226,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "phases/Ph03 - Top-K Tracker/Summary of Phase 3.md",
+                "file": "phases/Ph04 - Event Ingestion + Metrics/W2D2.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Summary of Phase 3"
+              "title": "Outgoing links from W2D2"
             }
           },
           {
@@ -282,8 +282,10 @@
   },
   "active": "3bae0fb70a9df86a",
   "lastOpenFiles": [
-    "RoadMap of Phases/Full RoadMap Phase 2.md",
+    "phases/Ph04 - Event Ingestion + Metrics/W2D1.md",
+    "phases/Ph04 - Event Ingestion + Metrics/W2D2.md",
     "phases/Ph03 - Top-K Tracker/Summary of Phase 3.md",
+    "RoadMap of Phases/Full RoadMap Phase 2.md",
     "phases/Ph03 - Top-K Tracker/Min-Heap Top-K Pattern.md",
     "phases/Ph03 - Top-K Tracker/Ph03 - Top-K Tracker.md",
     "phases/Ph03 - Top-K Tracker/AtomicLong vs Synchronized.md",
@@ -313,8 +315,6 @@
     "phases/Ph02 - Fingerprint + Dedup/Concepts/JPA",
     "phases/Ph02 - Fingerprint + Dedup/Concepts/JPA/StreamEventEntity's JPA Explanation.md",
     "phases/Ph02 - Fingerprint + Dedup/DeduplicationEngine/Dedup vs Idempotency.md",
-    "phases/Ph02 - Fingerprint + Dedup/DeduplicationEngine/DedupEntry Record & FingerPrint Record.md",
-    "phases/Ph02 - Fingerprint + Dedup/ConcurrentHashMap TTL Eviction.md",
     "phases/Ph02 - Fingerprint + Dedup/Concepts",
     "RoadMap of Phases",
     "phases/Ph02 - Docker + Health/Day3 summary"

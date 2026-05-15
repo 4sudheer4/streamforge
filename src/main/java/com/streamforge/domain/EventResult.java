@@ -9,3 +9,13 @@ public record EventResult(
         String fingerprint,    // the SHA-256 hash from Task 1
         boolean deduplicated   // quick boolean flag for callers
 ) {}
+/* 
+public record StreamEvent(
+    UUID id,
+    String sourceId,
+    String type,
+    Map<String, Object> payload,
+    Instant timestamp,
+    String fingerprint
+) {}
+    */
