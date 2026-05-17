@@ -6,6 +6,8 @@ import com.streamforge.infra.StreamEventEntity;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+
+import java.util.Objects;
 import java.util.Optional;
 import com.streamforge.infra.EventKafkaProducer;
 
@@ -38,7 +40,7 @@ public class EventIngestionService {
 
         // Save to PostgreSQL via JPA
         StreamEventEntity entity = new StreamEventEntity(
-            UUID.randomUUID(),
+            Objects.requireNonNull(event.id(), "Event id must not be null"),
             event.sourceId(),
             event.type(),
             event.payload(),

@@ -6,6 +6,9 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import java.time.Instant;
+
+import java.time.Instant;
 import java.util.UUID;
 
 @Slf4j
@@ -21,7 +24,16 @@ public class EventController {
 //                         for every single incoming request
         log.info("Received event type={} sourceId={}", event.type(), event.sourceId());
 
-        EventResult result = ingestionService.ingest(event);
+        // ensure id and timestamp are always set
+        StreamEvent enriched = new StreamEvent(
+            event.id() != null ? event.id() : UUID.randomUUID(),
+            event.sourceId(),
+            event.type(),
+            event.payload(),
+            event.timestamp() != null ? event.timestamp() : Instant.now(),
+            event.fingerprint()
+        );
+        EventResult result = ingestionService.ingest(enriched);
 
         // 200 for new events, 208 for duplicates
         int statusCode = result.deduplicated() ? 208 : 200;
