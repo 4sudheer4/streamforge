@@ -14,6 +14,8 @@ spring:
       ddl-auto: validate
   flyway:
     enabled: true
+  kafka:
+    bootstrap-servers: localhost:9092
 
 management:
   endpoints:

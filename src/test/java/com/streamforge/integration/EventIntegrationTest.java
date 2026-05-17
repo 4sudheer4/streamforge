@@ -33,19 +33,35 @@ public class EventIntegrationTest {
     @Autowired
     private TopKEventTracker topKEventTracker;
 
+    // runs before each test — clear the TopK tracker
+    // @Transactional rolls back DB but TopKEventTracker is in-memory
+    // so we reset it manually
     @BeforeEach
     void resetTracker() {
         topKEventTracker.reset();
     }
 
+    // ─── Test 1: Top-K ranking ────────────────────────────────────────────────
+
     @Test
     void topK_shouldReturnCorrectRanking_after50Events() throws Exception {
+
+        // POST 20 payment events
         postEvents("payment", 20);
+
+        // POST 15 login events
         postEvents("login", 15);
+
+        // POST 10 sms events
         postEvents("sms", 10);
+
+        // POST 3 transfer events
         postEvents("transfer", 3);
+
+        // POST 2 refund events
         postEvents("refund", 2);
 
+        // GET top-events?k=3 → should return payment, login, sms
         mockMvc.perform(get("/api/v1/analytics/top-events?k=3"))
             .andExpect(status().isOk())
             .andExpect(jsonPath("$.results[0].type").value("payment"))
@@ -56,22 +72,30 @@ public class EventIntegrationTest {
             .andExpect(jsonPath("$.results[2].rank").value(3));
     }
 
+    // ─── Test 2: Deduplication ────────────────────────────────────────────────
+
     @Test
     void dedup_shouldReturn208_onDuplicateEvent() throws Exception {
+
+        // fixed event — same id, same payload, same timestamp
         String fixedId = "550e8400-e29b-41d4-a716-446655440000";
         String body = buildEvent(fixedId, "source-001", "payment",
             Map.of("amount", 100), "2024-01-15T10:00:00Z");
 
+        // first POST → 200 processed
         mockMvc.perform(post("/api/v1/events")
             .contentType(MediaType.APPLICATION_JSON)
             .content(body))
             .andExpect(status().isOk());
 
+        // second POST → 208 duplicate
         mockMvc.perform(post("/api/v1/events")
             .contentType(MediaType.APPLICATION_JSON)
             .content(body))
             .andExpect(status().isAlreadyReported());
     }
+
+    // ─── Helpers ──────────────────────────────────────────────────────────────
 
     private void postEvents(String type, int count) throws Exception {
         for (int i = 0; i < count; i++) {
@@ -90,7 +114,7 @@ public class EventIntegrationTest {
     }
 
     private String buildEvent(String id, String sourceId, String type,
-                               Map<String, Object> payload, String timestamp)
+                               Map<String, Object> payload, String timestamp) 
                                throws Exception {
         return objectMapper.writeValueAsString(Map.of(
             "id", id,

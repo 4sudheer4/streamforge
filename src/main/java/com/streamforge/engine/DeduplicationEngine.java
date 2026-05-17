@@ -69,6 +69,15 @@ public class DeduplicationEngine {
         // Task 1 in action — generate the SHA-256 fingerprint
         String fingerprint = fingerprintGenerator.generate(event);
 
+        StreamEvent eventWithFingerprint = new StreamEvent(
+            event.id(),
+            event.sourceId(),
+            event.type(),
+            event.payload(),
+            event.timestamp(),
+            fingerprint
+        );
+
         // Check cache
         DeduplicationEntry existing = cache.get(fingerprint);
 
@@ -89,7 +98,7 @@ public class DeduplicationEngine {
         missCounter.increment();      // new event — increment misses
         // CACHE MISS — process the event fresh
         log.debug("Dedup MISS fingerprint={}", fingerprint);
-        EventResult result = processor.apply(event); //run whatever logic caller passed in, if cache is missed.
+        EventResult result = processor.apply(eventWithFingerprint); //run whatever logic caller passed in, if cache is missed.
 
         // Store in cache with TTL baked in at creation time
         Instant now = Instant.now();

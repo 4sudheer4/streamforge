@@ -5,6 +5,7 @@
 /Users/asudheer/Documents/Programming/streamforge/src/main/java/com/streamforge/api/package-info.java
 /Users/asudheer/Documents/Programming/streamforge/src/main/java/com/streamforge/common/MapToJsonConverter.java
 /Users/asudheer/Documents/Programming/streamforge/src/main/java/com/streamforge/common/package-info.java
+/Users/asudheer/Documents/Programming/streamforge/src/main/java/com/streamforge/config/KafkaConfig.java
 /Users/asudheer/Documents/Programming/streamforge/src/main/java/com/streamforge/config/package-info.java
 /Users/asudheer/Documents/Programming/streamforge/src/main/java/com/streamforge/domain/EventResult.java
 /Users/asudheer/Documents/Programming/streamforge/src/main/java/com/streamforge/domain/StreamEvent.java
@@ -15,6 +16,7 @@
 /Users/asudheer/Documents/Programming/streamforge/src/main/java/com/streamforge/engine/FingerprintGenerator.java
 /Users/asudheer/Documents/Programming/streamforge/src/main/java/com/streamforge/engine/TopKEventTracker.java
 /Users/asudheer/Documents/Programming/streamforge/src/main/java/com/streamforge/engine/package-info.java
+/Users/asudheer/Documents/Programming/streamforge/src/main/java/com/streamforge/infra/EventKafkaProducer.java
 /Users/asudheer/Documents/Programming/streamforge/src/main/java/com/streamforge/infra/RateLimitFilter.java
 /Users/asudheer/Documents/Programming/streamforge/src/main/java/com/streamforge/infra/RateLimitResult.java
 /Users/asudheer/Documents/Programming/streamforge/src/main/java/com/streamforge/infra/SlidingWindowRateLimiter.java

@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import java.util.Optional;
+import com.streamforge.infra.EventKafkaProducer;
 
 import java.util.UUID;
 @Slf4j
@@ -16,6 +17,7 @@ public class EventIngestionService {
     private final DeduplicationEngine deduplicationEngine;
     private final StreamEventRepository repository;  // JPA repository — talks to PostgreSQL
     private final TopKEventTracker topKEventTracker;
+    private final EventKafkaProducer eventKafkaProducer; 
 
     public EventResult ingest(StreamEvent event) {
         topKEventTracker.record(event.type());
@@ -44,6 +46,7 @@ public class EventIngestionService {
             event.fingerprint()
         );
         repository.save(entity);
+        eventKafkaProducer.publishEvent(event);
 
         return new EventResult(
             entity.getId(),

@@ -125,12 +125,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "phases/Ph04 - Event Ingestion + Metrics/W2D2.md",
+                "file": "phases/Ph05 - Kafka Producer + Spike Detector/Kafka Template.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "W2D2"
+              "title": "Kafka Template"
             }
           }
         ],
@@ -207,7 +207,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "phases/Ph04 - Event Ingestion + Metrics/W2D2.md",
+                "file": "phases/Ph05 - Kafka Producer + Spike Detector/Kafka Template.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -217,7 +217,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for W2D2"
+              "title": "Backlinks for Kafka Template"
             }
           },
           {
@@ -226,12 +226,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "phases/Ph04 - Event Ingestion + Metrics/W2D2.md",
+                "file": "phases/Ph05 - Kafka Producer + Spike Detector/Kafka Template.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from W2D2"
+              "title": "Outgoing links from Kafka Template"
             }
           },
           {
@@ -282,8 +282,20 @@
   },
   "active": "3bae0fb70a9df86a",
   "lastOpenFiles": [
-    "phases/Ph04 - Event Ingestion + Metrics/W2D1.md",
-    "phases/Ph04 - Event Ingestion + Metrics/W2D2.md",
+    "phases/Ph05 - Kafka Producer + Spike Detector/KafkaConfig.java.md",
+    "phases/Ph05 - Kafka Producer + Spike Detector/Kafka Template.md",
+    "phases/Ph05 - Kafka Producer + Spike Detector/anamolies and dlq topics.md",
+    "phases/Ph05 - Kafka Producer + Spike Detector/Kafka Topic Design.md",
+    "phases/Ph05 - Kafka Producer + Spike Detector/MonotonicDeque Explained.md",
+    "phases/Ph05 - Kafka Producer + Spike Detector/Idempotent Producer Config.md",
+    "phases/Ph05 - Kafka Producer + Spike Detector/DLQ Pattern.md",
+    "phases/Ph05 - Kafka Producer + Spike Detector/Kafka and Redis together.md",
+    "phases/Ph04 - Redis Rate Limiter/W2D2.md",
+    "phases/Ph04 - Redis Rate Limiter/W2D1.md",
+    "phases/Ph04 - Redis Rate Limiter/W2D1+W2D2 Notes.md",
+    "phases/Ph04 - Redis Rate Limiter/208 Already Reported.md",
+    "phases/Ph03 - Top-K Tracker/Micrometer Gauge vs Counter.md",
+    "phases/Ph03 - Top-K Tracker/Ph04 - Event Ingestion + Metrics.md",
     "phases/Ph03 - Top-K Tracker/Summary of Phase 3.md",
     "RoadMap of Phases/Full RoadMap Phase 2.md",
     "phases/Ph03 - Top-K Tracker/Min-Heap Top-K Pattern.md",
@@ -291,9 +303,6 @@
     "phases/Ph03 - Top-K Tracker/AtomicLong vs Synchronized.md",
     "BluePrint -Springboot project/The BluePrint.md",
     "BluePrint -Springboot project",
-    "phases/Ph04 - Event Ingestion + Metrics/Ph04 - Event Ingestion + Metrics.md",
-    "phases/Ph04 - Event Ingestion + Metrics/Micrometer Gauge vs Counter.md",
-    "phases/Ph04 - Event Ingestion + Metrics/208 Already Reported.md",
     "phases/Ph02 - Fingerprint + Dedup/Interview Questions.md",
     "phases/Ph02 - Fingerprint + Dedup/Concepts/Singleton, Objects and DI/Where in the code are we creating new object per request?.md",
     "phases/Ph02 - Fingerprint + Dedup/Concepts/Singleton, Objects and DI/Constructors Springboot Task 3.md",
@@ -301,20 +310,11 @@
     "phases/Ph02 - Fingerprint + Dedup/Concepts/Singleton, Objects and DI/Component reference table.md",
     "phases/Ph02 - Fingerprint + Dedup/Concepts/Singleton, Objects and DI",
     "phases/Ph02 - Fingerprint + Dedup/Concepts/ConcurrentHashMap -removeIf.md",
-    "DataStructures and Variables/till Phase 2/DataStructures and Variables till Phase02.md",
-    "phases/Ph02 - Fingerprint + Dedup/EventController/EventController.md",
     "DataStructures and Variables/till Phase 2",
-    "phases/Ph02 - Fingerprint + Dedup/EventController/EventController.java.md",
-    "phases/Ph02 - Fingerprint + Dedup/EventIngestionService/EventIngestionService Explanation.md",
     "phases/Ph02 - Fingerprint + Dedup/EventController",
-    "phases/Ph02 - Fingerprint + Dedup/DeduplicationEngine/DeduplicationEngine.java.md",
     "phases/Ph02 - Fingerprint + Dedup/DeduplicationEngine",
     "phases/Ph02 - Fingerprint + Dedup/EventIngestionService",
-    "phases/Ph02 - Fingerprint + Dedup/Concepts/JPA/JPA + PostGres highlevel overview.md",
-    "phases/Ph02 - Fingerprint + Dedup/Concepts/JPA/How is StreamEventRepository linked to postgres?.md",
     "phases/Ph02 - Fingerprint + Dedup/Concepts/JPA",
-    "phases/Ph02 - Fingerprint + Dedup/Concepts/JPA/StreamEventEntity's JPA Explanation.md",
-    "phases/Ph02 - Fingerprint + Dedup/DeduplicationEngine/Dedup vs Idempotency.md",
     "phases/Ph02 - Fingerprint + Dedup/Concepts",
     "RoadMap of Phases",
     "phases/Ph02 - Docker + Health/Day3 summary"
