@@ -63,4 +63,12 @@ public class RateLimitFilter extends OncePerRequestFilter {
 
         filterChain.doFilter(request, response);
     }
+
+    @Override
+    protected boolean shouldNotFilter(HttpServletRequest request) {
+    String path = request.getRequestURI();
+    return path.startsWith("/api/v1/analytics") || 
+           path.startsWith("/actuator") ||
+           path.equals("/health");
+}
 }

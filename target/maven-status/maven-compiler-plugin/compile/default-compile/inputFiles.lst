@@ -9,6 +9,7 @@
 /Users/asudheer/Documents/Programming/streamforge/src/main/java/com/streamforge/config/package-info.java
 /Users/asudheer/Documents/Programming/streamforge/src/main/java/com/streamforge/domain/EventResult.java
 /Users/asudheer/Documents/Programming/streamforge/src/main/java/com/streamforge/domain/RequestBucket.java
+/Users/asudheer/Documents/Programming/streamforge/src/main/java/com/streamforge/domain/SpikeStats.java
 /Users/asudheer/Documents/Programming/streamforge/src/main/java/com/streamforge/domain/StreamEvent.java
 /Users/asudheer/Documents/Programming/streamforge/src/main/java/com/streamforge/domain/package-info.java
 /Users/asudheer/Documents/Programming/streamforge/src/main/java/com/streamforge/engine/DeduplicationEngine.java

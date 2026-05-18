@@ -6,6 +6,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
+import com.streamforge.domain.SpikeStats;
+import java.util.Optional;
 
 import java.time.Instant;
 import java.util.Map;
@@ -22,7 +24,8 @@ public class SpikeDetector {
 
     private final MonotonicDequeAnalyzer analyzer;
     private final KafkaTemplate<String, String> kafkaTemplate;
-
+    private final Map<String, AtomicLong> spikeCounts = new ConcurrentHashMap<>();
+    private final Map<String, Instant> lastSpikeAt = new ConcurrentHashMap<>();
     private final Map<String, AtomicLong> currentBucketCount
         = new ConcurrentHashMap<>();
 
@@ -31,18 +34,18 @@ public class SpikeDetector {
         long count = currentBucketCount
             .computeIfAbsent(sourceId, k -> new AtomicLong(0))
             .incrementAndGet();
-        log.info("trackEvent called sourceId={} count={}", sourceId, count);
+        //log.info("trackEvent called sourceId={} count={}", sourceId, count);
 
     }
 
     @Scheduled(fixedRate = 1000)
     public void flushBuckets() {
-        log.info("flushBuckets running, sources={}", currentBucketCount.keySet());
+        //log.info("flushBuckets running, sources={}", currentBucketCount.keySet());
         currentBucketCount.forEach((sourceId, counter) -> {
 
             // get count for this second and reset to 0 atomically
             long count = counter.getAndSet(0);
-            log.info("sourceId={} count={}", sourceId, count);
+            //log.info("sourceId={} count={}", sourceId, count);
             // tell analyzer about this second's bucket
             analyzer.record(sourceId, count);
 
@@ -54,6 +57,9 @@ public class SpikeDetector {
             int bucketCount = analyzer.getBucketCount(sourceId);
             if (rollingAvg > 0 && bucketCount >= 5 && count > SPIKE_MULTIPLIER * rollingAvg) {
                 double multiplier = count / rollingAvg;
+                // track spike history
+                spikeCounts.computeIfAbsent(sourceId, k -> new AtomicLong(0)).incrementAndGet();
+                lastSpikeAt.put(sourceId, Instant.now());
                 log.warn("SPIKE detected for sourceId={} count={} rollingAvg={} multiplier={}x",
                     sourceId, count, rollingAvg, String.format("%.1f", multiplier));
 
@@ -69,5 +75,18 @@ public class SpikeDetector {
     count, rollingAvg, SPIKE_MULTIPLIER * rollingAvg, bucketCount);
             }
         });
+    }
+    public SpikeStats getStats(String sourceId) {
+        long currentRate = Optional.ofNullable(currentBucketCount.get(sourceId))
+            .map(AtomicLong::get)
+            .orElse(0L);
+        long maxInWindow = analyzer.getMaxInWindow(sourceId);
+        double rollingAvg = analyzer.getRollingAvg(sourceId);
+        long spikeCount = Optional.ofNullable(spikeCounts.get(sourceId))
+            .map(AtomicLong::get)
+            .orElse(0L);
+        Instant lastSpike = lastSpikeAt.get(sourceId);
+    
+        return new SpikeStats(sourceId, currentRate, maxInWindow, rollingAvg, spikeCount, lastSpike);
     }
 }
