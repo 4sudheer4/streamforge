@@ -28,18 +28,21 @@ public class SpikeDetector {
 
     // called on every incoming event
     public void trackEvent(String sourceId) {
-        currentBucketCount
+        long count = currentBucketCount
             .computeIfAbsent(sourceId, k -> new AtomicLong(0))
             .incrementAndGet();
+        log.info("trackEvent called sourceId={} count={}", sourceId, count);
+
     }
 
     @Scheduled(fixedRate = 1000)
     public void flushBuckets() {
+        log.info("flushBuckets running, sources={}", currentBucketCount.keySet());
         currentBucketCount.forEach((sourceId, counter) -> {
 
             // get count for this second and reset to 0 atomically
             long count = counter.getAndSet(0);
-
+            log.info("sourceId={} count={}", sourceId, count);
             // tell analyzer about this second's bucket
             analyzer.record(sourceId, count);
 
@@ -48,7 +51,8 @@ public class SpikeDetector {
             double rollingAvg = analyzer.getRollingAvg(sourceId);
 
             // spike check — need at least some baseline before alerting
-            if (rollingAvg > 0 && count > SPIKE_MULTIPLIER * rollingAvg) {
+            int bucketCount = analyzer.getBucketCount(sourceId);
+            if (rollingAvg > 0 && bucketCount >= 5 && count > SPIKE_MULTIPLIER * rollingAvg) {
                 double multiplier = count / rollingAvg;
                 log.warn("SPIKE detected for sourceId={} count={} rollingAvg={} multiplier={}x",
                     sourceId, count, rollingAvg, String.format("%.1f", multiplier));
@@ -59,6 +63,10 @@ public class SpikeDetector {
                     sourceId, count, rollingAvg, multiplier, Instant.now()
                 );
                 kafkaTemplate.send(ANOMALIES_TOPIC, sourceId, spikePayload);
+            }
+            else {
+                log.info("no spike: count={} rollingAvg={} threshold={} bucketCount={}", 
+    count, rollingAvg, SPIKE_MULTIPLIER * rollingAvg, bucketCount);
             }
         });
     }

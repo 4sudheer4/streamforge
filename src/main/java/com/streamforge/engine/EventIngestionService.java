@@ -20,9 +20,12 @@ public class EventIngestionService {
     private final StreamEventRepository repository;  // JPA repository — talks to PostgreSQL
     private final TopKEventTracker topKEventTracker;
     private final EventKafkaProducer eventKafkaProducer; 
+    private final SpikeDetector spikeDetector;
 
     public EventResult ingest(StreamEvent event) {
+        log.info("ingest called for sourceId={}", event.sourceId());
         topKEventTracker.record(event.type());
+        spikeDetector.trackEvent(event.sourceId()); 
         return deduplicationEngine.deduplicateOrProcess(
             event,
             this::persistToDatabase  // METHOD REFERENCE — same as e -> persistToDatabase(e)
