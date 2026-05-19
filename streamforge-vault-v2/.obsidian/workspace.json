@@ -132,9 +132,23 @@
               "icon": "lucide-file",
               "title": "MonotonicDequeAnalyzer.java + SpikeDetector.java"
             }
+          },
+          {
+            "id": "a6dad51a8bbcf860",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "phases/Ph05 - Kafka Producer + Spike Detector/W2D5.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "W2D5"
+            }
           }
         ],
-        "currentTab": 8
+        "currentTab": 9
       }
     ],
     "direction": "vertical"
@@ -207,7 +221,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "phases/Ph05 - Kafka Producer + Spike Detector/MonotonicDequeAnalyzer.java + SpikeDetector.java.md",
+                "file": "phases/Ph05 - Kafka Producer + Spike Detector/W2D5.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -217,7 +231,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for MonotonicDequeAnalyzer.java + SpikeDetector.java"
+              "title": "Backlinks for W2D5"
             }
           },
           {
@@ -226,12 +240,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "phases/Ph05 - Kafka Producer + Spike Detector/MonotonicDequeAnalyzer.java + SpikeDetector.java.md",
+                "file": "phases/Ph05 - Kafka Producer + Spike Detector/W2D5.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from MonotonicDequeAnalyzer.java + SpikeDetector.java"
+              "title": "Outgoing links from W2D5"
             }
           },
           {
@@ -280,10 +294,11 @@
       "bases:Create new base": false
     }
   },
-  "active": "3bae0fb70a9df86a",
+  "active": "a6dad51a8bbcf860",
   "lastOpenFiles": [
-    "phases/Ph05 - Kafka Producer + Spike Detector/MonotonicDeque Explained.md",
     "phases/Ph05 - Kafka Producer + Spike Detector/MonotonicDequeAnalyzer.java + SpikeDetector.java.md",
+    "phases/Ph05 - Kafka Producer + Spike Detector/W2D5.md",
+    "phases/Ph05 - Kafka Producer + Spike Detector/MonotonicDeque Explained.md",
     "phases/Ph05 - Kafka Producer + Spike Detector/Kafka Template.md",
     "phases/Ph05 - Kafka Producer + Spike Detector/KafkaConfig.java.md",
     "phases/Ph05 - Kafka Producer + Spike Detector/anamolies and dlq topics.md",
@@ -308,7 +323,6 @@
     "phases/Ph02 - Fingerprint + Dedup/Concepts/Singleton, Objects and DI/Where in the code are we creating new object per request?.md",
     "phases/Ph02 - Fingerprint + Dedup/Concepts/Singleton, Objects and DI/Constructors Springboot Task 3.md",
     "phases/Ph02 - Fingerprint + Dedup/Concepts/Singleton, Objects and DI/Stateless vs Stateful in StreamForge.md",
-    "phases/Ph02 - Fingerprint + Dedup/Concepts/Singleton, Objects and DI/Component reference table.md",
     "phases/Ph02 - Fingerprint + Dedup/Concepts/Singleton, Objects and DI",
     "DataStructures and Variables/till Phase 2",
     "phases/Ph02 - Fingerprint + Dedup/EventController",

@@ -1,6 +1,9 @@
 package com.streamforge.engine;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.streamforge.domain.EventResult;
 import com.streamforge.domain.StreamEvent;
+import com.streamforge.domain.ValidationResult;
 import com.streamforge.infra.StreamEventRepository;
 import com.streamforge.infra.StreamEventEntity;
 import lombok.RequiredArgsConstructor;
@@ -21,9 +24,20 @@ public class EventIngestionService {
     private final TopKEventTracker topKEventTracker;
     private final EventKafkaProducer eventKafkaProducer; 
     private final SpikeDetector spikeDetector;
+    private final JsonStructureValidator jsonStructureValidator;
+    private final ObjectMapper objectMapper;
 
     public EventResult ingest(StreamEvent event) {
         log.info("ingest called for sourceId={}", event.sourceId());
+        try {
+        String payloadJson = objectMapper.writeValueAsString(event.payload());
+        ValidationResult validation = jsonStructureValidator.validate(payloadJson);
+        if (!validation.isValid()) {
+            throw new IllegalArgumentException(validation.errorMessage());
+        }
+        } catch (JsonProcessingException e) {
+            throw new IllegalArgumentException("Invalid payload: " + e.getMessage());
+        }
         topKEventTracker.record(event.type());
         spikeDetector.trackEvent(event.sourceId()); 
         return deduplicationEngine.deduplicateOrProcess(
