@@ -11,11 +11,13 @@
 /Users/asudheer/Documents/Programming/streamforge/src/main/java/com/streamforge/domain/RequestBucket.java
 /Users/asudheer/Documents/Programming/streamforge/src/main/java/com/streamforge/domain/SpikeStats.java
 /Users/asudheer/Documents/Programming/streamforge/src/main/java/com/streamforge/domain/StreamEvent.java
+/Users/asudheer/Documents/Programming/streamforge/src/main/java/com/streamforge/domain/ValidationResult.java
 /Users/asudheer/Documents/Programming/streamforge/src/main/java/com/streamforge/domain/package-info.java
 /Users/asudheer/Documents/Programming/streamforge/src/main/java/com/streamforge/engine/DeduplicationEngine.java
 /Users/asudheer/Documents/Programming/streamforge/src/main/java/com/streamforge/engine/DeduplicationEntry.java
 /Users/asudheer/Documents/Programming/streamforge/src/main/java/com/streamforge/engine/EventIngestionService.java
 /Users/asudheer/Documents/Programming/streamforge/src/main/java/com/streamforge/engine/FingerprintGenerator.java
+/Users/asudheer/Documents/Programming/streamforge/src/main/java/com/streamforge/engine/JsonStructureValidator.java
 /Users/asudheer/Documents/Programming/streamforge/src/main/java/com/streamforge/engine/MonotonicDequeAnalyzer.java
 /Users/asudheer/Documents/Programming/streamforge/src/main/java/com/streamforge/engine/SpikeDetector.java
 /Users/asudheer/Documents/Programming/streamforge/src/main/java/com/streamforge/engine/TopKEventTracker.java

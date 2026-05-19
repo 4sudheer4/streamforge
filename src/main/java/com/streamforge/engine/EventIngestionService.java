@@ -29,15 +29,7 @@ public class EventIngestionService {
 
     public EventResult ingest(StreamEvent event) {
         log.info("ingest called for sourceId={}", event.sourceId());
-        try {
-        String payloadJson = objectMapper.writeValueAsString(event.payload());
-        ValidationResult validation = jsonStructureValidator.validate(payloadJson);
-        if (!validation.isValid()) {
-            throw new IllegalArgumentException(validation.errorMessage());
-        }
-        } catch (JsonProcessingException e) {
-            throw new IllegalArgumentException("Invalid payload: " + e.getMessage());
-        }
+        
         topKEventTracker.record(event.type());
         spikeDetector.trackEvent(event.sourceId()); 
         return deduplicationEngine.deduplicateOrProcess(
